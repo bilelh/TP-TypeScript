@@ -1,44 +1,37 @@
-import {Film}  from './film' ;
-import {Trailer} from './trailer' ;
-
-let title:string = '12 Rounds 3: Lockdown';
-let release:string ='Fri, 11 Sep 2015 00:00:00 -0700';
-let studio:string = 'Lionsgate' ;
-let poster:string = 'http://trailers.apple.com/trailers/lions_gate/12rounds3lockdown/images/poster.jpg' ;
-let location:string = '/trailers/lions_gate/12rounds3lockdown/' ;
-let rating:string = 'R' ;
-let genre:string = '["Action and Adventure"]' ;
-let directors:string = 'Stephen Reynolds' ;
-
-let postDate:string = '12 Rounds 3: Lockdown';
-let url:string ='Fri, 11 Sep 2015 00:00:00 -0700';
-let type:string = 'Lionsgate' ;
-let exclusive:boolean = false ;
-let hd:boolean = true;
-
-let trailer:Trailer = new Trailer(postDate , url , type , 
-    exclusive , hd) ;
-
-let film:Film = new Film(title , release , studio , poster , 
-    location , rating , genre , directors, trailer ) ;
+import { Trainer } from "./trainer";
+import { Gender } from "./gender";
+import { Religion } from "./religion";
+import { Knowledge } from "./knowledge";
+import { Trainee } from "./trainee";
+import { Certificate } from "./certificate";
+import { Training } from "./training";
 
 
+let angular = new Knowledge('Angular',10);
+let java = new Knowledge('java',20);
+let master = new Certificate('master 2' , 2014)
+let java8 = new Certificate ('java 8' , 2019)
 
-console.log(`FILM :
-    titre : ${film.title}
-    release : ${film.release}
-    studio : ${film.studio}
-    poster : ${film.poster}
-    location : ${film.location}
-    rating : ${film.rating}
-    genre : ${film.genre}
-    directors : ${film.directors}
-    Trailers :
-        postDate : ${film.trailer.postDate}
-        url : ${film.trailer.url}
-        type : ${film.trailer.type}
-        exclusive : ${film.trailer.exclusive}
-        hd : ${film.trailer.hd}`
-        );
-        
+let niko = new Trainer(
+    [angular , java],
+    'Hodicq',
+    'niko',
+    Gender.male,
+    Religion.Atheist
+)
 
+let bilel = new Trainee(
+    [master , java8],
+    'harzallah',
+    'bilel',
+    Gender.male,
+    Religion.Islam
+)
+
+let formationJava = new Training (
+    'Formation Java FullStack',
+    '21/04/2019',
+    '16/07/2019',
+    [bilel],
+    [niko]
+)

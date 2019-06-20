@@ -1,20 +1,20 @@
-
-enum gender {male , female};
-enum religion {Buddhism , Judaism , Islam , Catholicism , Atheist};
+import {Gender} from './gender';
+import {Religion} from './religion';
+import {Beverage} from './beverage';
 
 export class Personne {
     
     constructor(
         public name :string , 
         public firstname :string ,
-        public gender:gender ,
-        private religion :religion ,
+        public gender:Gender ,
+        private religion? :Religion ,
     ) {}
 
-    drink (beverageName:string , alcool:boolean , bio:boolean): void {
-        if (alcool && bio) {
-            console.log(`Boisson : ${beverageName}`)
-        }
+    drink (beverage:Beverage): void {
+        console.log(`Beverage : ${beverage.name}  
+                Alcohol : ${beverage.alcool}
+                Bio : ${beverage.bio}`)
     }
     
     toString(): void {
