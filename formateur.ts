@@ -11,6 +11,10 @@ export class Formateur extends Personne {
         private connaissance : Connaissance
     ) {super(name , firstname , gender , religion);}
 
-    enseigner() {}
+    enseigner() {
+        if (this.connaissance.exp > 2) {
+            console.log(this.connaissance.name)
+        }
+    }
 }
 
